@@ -1,8 +1,6 @@
 html {
-  margin: 0;
   padding: 0;
   height: 100%;
-  font-family: Arial, sans-serif;
 }
 
 #color-picker-container {
@@ -10,6 +8,10 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: coloumn;
   background-color: #ffffff;
+}
+
+input[type="color"] {
+  position: absolute;
+  height: 40px;
 }
