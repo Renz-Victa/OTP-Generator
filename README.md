@@ -1,1 +1,1 @@
-# Color-Picker-App
+<!-- package name: color-picker-app>
