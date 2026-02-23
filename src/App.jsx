@@ -1,8 +1,7 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import React, { useState, useMemo } from 'react';
 import './index.css'
 
-export const ColorPicker = () => {
+export default function ColorPicker() {
   const [bgColor, setBgColor] = useState("#ffffff")
 
   function handleColorChange(event) {
@@ -11,18 +10,18 @@ export const ColorPicker = () => {
   }
 
   return (
-    <div id="color-picker-container"
-      style={{
-        backgroundColor: bgColor
-      }}>
-      <input
-        type="color"
-        value={bgColor}
-        id="color-input"
-        onChange={handleColorChange}
-      />
-    </div>
-  )
-};
-
-export default App
+    <>
+      <div id="color-picker-container"
+        style={{
+          backgroundColor: bgColor
+        }}>
+        <input
+          type="color"
+          value={bgColor}
+          id="color-input"
+          onChange={handleColorChange}
+        />
+      </div>
+    </>
+  );
+}
