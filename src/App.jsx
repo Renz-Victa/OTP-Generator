@@ -7,7 +7,22 @@ export const ColorPicker = () => {
 
   function handleColorChange(event) {
     console.log(event.target.value)
+    setBgColor(event.target.value)
   }
-}
+
+  return (
+    <div id="color-picker-container"
+      style={{
+        backgroundColor: bgColor
+      }}>
+      <input
+        type="color"
+        value={bgColor}
+        id="color-input"
+        onChange={handleColorChange}
+      />
+    </div>
+  )
+};
 
 export default App
