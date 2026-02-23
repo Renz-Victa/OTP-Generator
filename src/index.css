@@ -4,3 +4,12 @@ html {
   height: 100%;
   font-family: Arial, sans-serif;
 }
+
+#color-picker-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: coloumn;
+  background-color: #ffffff;
+}
