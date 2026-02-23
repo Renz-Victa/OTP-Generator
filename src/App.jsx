@@ -6,7 +6,7 @@ export const ColorPicker = () => {
   const [bgColor, setBgColor] = useState("#ffffff")
 
   function handleColorChange(event) {
-    console.log(event.)
+    console.log(event.target.value)
   }
 }
 
