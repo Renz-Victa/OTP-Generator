@@ -8,7 +8,7 @@ export default function EventRSVPForm() {
     attendees: 1,
     dietary: "",
     bringingGuests: false,
-  }),
+  });
 
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
@@ -74,7 +74,35 @@ export default function EventRSVPForm() {
           {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
         </div>
 
+        <div>
+          <label>
+            Number of Attendees:
+            <input
+              type="number"
+              name="attendees"
+              min="1"
+              value={formData.attendees}
+              onChange={handleChange}
+              required
+            />
+          </label>
+          {errors.attendees && (
+            <p style={{ color: "red" }}>{errors.attendees}</p>
+          )}
+        </div>
 
+        <div>
+          <label>
+            Dietary Preferences:
+            <input
+              type="number"
+              name="dietary"
+              value={formData.dietary}
+              onChange={handleChange}
+              placeholder="Optional"
+            />
+          </label>
+        </div>
       </form>
     </div>
   )
