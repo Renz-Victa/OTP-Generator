@@ -63,9 +63,18 @@ export default function EventRSVPForm() {
         <div>
           <label>
             Name:
-            <
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
           </label>
+          {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
         </div>
+
+
       </form>
     </div>
   )
