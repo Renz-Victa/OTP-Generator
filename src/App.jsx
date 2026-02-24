@@ -128,8 +128,13 @@ export default function EventRSVPForm() {
           <p>
             <strong>Dietary Preferences:</strong>{" "}
             {formData.dietary || "None"}
-          </p>   
-      )}
+          </p>
+          <p>
+            <strong>Additional Guests:</strong>{" "}
+            {formData.bringingGuests ? "Yes" : "No"}
+          </p>
         </div>
-      )
-      }
+      )}
+    </div>
+  );
+}
