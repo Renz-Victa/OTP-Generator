@@ -12,12 +12,13 @@ div {
 input {
   padding: 5px;
   border-radius: 8px;
-  border: 2px solid white;
+  border: 1px solid white;
   margin-left: 20px;
 }
 
 input:hover {
   transform: translateY(-2px);
+  transition: 0.5s;
 }
 
 body {
@@ -42,4 +43,5 @@ button {
 button:hover {
   transform: translateY(-2px);
   transition: 0.5s;
+  cursor: pointer;
 }
