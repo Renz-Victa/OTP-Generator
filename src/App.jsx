@@ -116,8 +116,20 @@ export default function EventRSVPForm() {
           </label>
         </div>
 
-
+        <button type="submit">Submit Registration</button>
       </form>
-    </div>
-  )
-}
+
+      {submitted && (
+        <div sytle={{ marginTop: "2rem" }}>
+          <h2>Registration Confirmed 🎉</h2>
+          <p><strong>Name:</strong> {formData.name}</p>
+          <p><strong>Email:</strong> {formData.email}</p>
+          <p><strong>Attendees:</strong> {formData.attendees}</p>
+          <p>
+            <strong>Dietary Preferences:</strong>{" "}
+            {formData.dietary || "None"}
+          </p>   
+      )}
+        </div>
+      )
+      }
