@@ -103,6 +103,20 @@ export default function EventRSVPForm() {
             />
           </label>
         </div>
+
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="bringingGuests"
+              checked={formData.bringingGuests}
+              onChange={handleChange}
+            />
+            Bringing additional guests?
+          </label>
+        </div>
+
+
       </form>
     </div>
   )
