@@ -9,6 +9,32 @@ div {
   justify-content: center;
 }
 
-label {
-  margin: 20px;
+input {
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid white;
+  outline: none;
+  margin-left: 20px;
+}
+
+input:hover {
+  transform: translateY(-4px);
+}
+
+.container {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+body {
+  background: beige;
+}
+
+form {
+  padding: 25px;
+  border-radius: 16px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  background-color: rgb(131, 188, 190);
 }
