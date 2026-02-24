@@ -3,6 +3,12 @@ h1 {
   justify-content: center;
 }
 
-form {
+div {
   font-family: Arial, sans-serif;
+  margin: 20px;
+  justify-content: center;
+}
+
+label {
+  margin: 20px;
 }

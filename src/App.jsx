@@ -56,7 +56,7 @@ export default function EventRSVPForm() {
   };
 
   return (
-    <div style={{ maxWidth: "500px", margin: "2rem auto", fontFamily: "Arial" }}>
+    <div style={{ maxWidth: "500px", margin: "2rem auto" }}>
       <h1>Event Registration</h1>
 
       <form onSubmit={handleSubmit} noValidate>
