@@ -46,9 +46,27 @@ export default function EventRSVPForm() {
     e.preventDefault();
 
     const validationErrors = validate();
-    if (Object.keys(validationErrors).length > 0 {
+    if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
-    })
-  }
+    }
+
+    setErrors({});
+    setSubmitted(true);
+  };
+
+  return (
+    <div style={{ maxWidth: "500px", margin: "2rem auto", fontFamily: "Arial" }}>
+      <h1>Event Registration</h1>
+
+      <form onSubmit={handleSubmit} noValidate>
+        <div>
+          <label>
+            Name:
+            <
+          </label>
+        </div>
+      </form>
+    </div>
+  )
 }
