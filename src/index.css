@@ -1,0 +1,20 @@
+div {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 100;
+}
