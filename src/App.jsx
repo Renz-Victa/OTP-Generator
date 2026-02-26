@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import './index.css'
 
 export default function OTPGenerator() {
@@ -7,11 +7,11 @@ export default function OTPGenerator() {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    let time;
+    let timer;
 
     if (isActive && timeLeft > 0) {
       timer = setInterval(() => {
-        setTimerLeft((prev) => prev - 1);
+        setTimeLeft((prev) => prev - 1);
       }, 1000);
     }
 
@@ -41,6 +41,16 @@ export default function OTPGenerator() {
 
       <p id="otp-timer" aria-live="polite">
         {isActive && timeLeft > 0 && `Expires in: ${timeLeft} seconds`}
+        {!isActive && otp && timeLeft === 0 && "OTP expired. Click the button to generate a new OTP."}
       </p>
+
+      <button
+        id="generate-otp-button"
+        onClick={generateOTP}
+        disabled={isActive}
+      >
+        Generate OTP
+      </button>
     </div>
-  )
+  );
+}
