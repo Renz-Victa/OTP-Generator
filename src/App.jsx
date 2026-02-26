@@ -2,8 +2,8 @@ import React, { useState, useMemo, useEffect } from 'react';
 import './index.css'
 
 export default function OTPGenerator() {
-  const [otp, setOTP] = useState(null);
-  const [timeLeft, setTimeLeft] = useState();
+  const [otp, setOtp] = useState(null);
+  const [timeLeft, setTimeLeft] = useState(0);
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
