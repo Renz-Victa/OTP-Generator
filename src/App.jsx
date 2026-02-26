@@ -94,13 +94,12 @@ export default function EventRSVPForm() {
         <div>
           <label>
             Dietary Preferences:
-            <input
-              type="number"
-              name="dietary"
-              value={formData.dietary}
-              onChange={handleChange}
-              placeholder="Optional"
-            />
+            <select>
+              <option value="">Select preference</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="gluten-free">Gluten Free</option>
+            </select>
           </label>
         </div>
 
