@@ -87,6 +87,16 @@ export default function OTPGenerator() {
       cursor: pointer;
       }
       `}</style>
+
+      <div className="board-container">
+        <h1>Tic Tac Toe</h1>
+        <div className="status">{msg || `Next Player: ${state.activePlayer}`}</div>
+        <div className="sqaures">
+          {state.selections.map((val, i) => (
+            <button
+          ))}
+        </div>
+      </div>
     </>
   )
   )
