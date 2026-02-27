@@ -70,7 +70,9 @@ export default function OTPGenerator() {
       height: 100px;
       font-size: 2rem;
       font-weight: bold;
-      cursor: pointer
+      cursor: pointer;
+      background: white;
+      border: 1px solid white;
       }
       `}</style>
     </>
