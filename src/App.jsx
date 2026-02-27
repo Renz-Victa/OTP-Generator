@@ -73,9 +73,11 @@ export default function Board() {
       cursor: pointer;
       background: white;
       border: 2px solid #333;
+      border-radius: 10px;
       }
       .square:hover {
       background: #f0f0f0;
+      transform: translateY(-2px);
       }
       .status {
       height: 30px;
@@ -85,6 +87,14 @@ export default function Board() {
       #reset {
       padding: 10px 20px;
       cursor: pointer;
+      }
+      button {
+      border-radius: 10px;
+      border: none;
+      }
+      button:hover {
+      transform: translateY(-2px);
+      background: #f0f0f0;
       }
       `}</style>
 
