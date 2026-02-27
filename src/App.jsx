@@ -65,17 +65,17 @@ export default function Board() {
       gap: 5px;
       margin: 20px 0;
       }
-      .sqaure {
+      .square {
       width: 100px;
       height: 100px;
       font-size: 2rem;
       font-weight: bold;
       cursor: pointer;
       background: white;
-      border: 1px solid white;
+      border: 2px solid #333;
       }
       .square:hover {
-      background: white;
+      background: #f0f0f0;
       }
       .status {
       height: 30px;
@@ -91,7 +91,7 @@ export default function Board() {
       <div className="board-container">
         <h1>Tic Tac Toe</h1>
         <div className="status">{msg || `Next Player: ${state.activePlayer}`}</div>
-        <div className="sqaures">
+        <div className="squares">
           {state.selections.map((val, i) => (
             <button
               key={i}
