@@ -90,7 +90,7 @@ export default function Board() {
       }
       button {
       border-radius: 10px;
-      border: none;
+      background: white;
       }
       button:hover {
       transform: translateY(-2px);
