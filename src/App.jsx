@@ -1,56 +1,79 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import './index.css'
 
+const winning combinations = [
+  [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+  [0, 3, 6], [1, 4, 7], [2, 5, 8], // Cols
+  [0, 4, 8], [2, 4, 6]             // Diagonals
+];
+
 export default function OTPGenerator() {
-  const [otp, setOtp] = useState(null);
-  const [timeLeft, setTimeLeft] = useState(0);
-  const [isActive, setIsActive] = useState(false);
+  const [state, setState] = useState({
+    selections: Array(9).fill(null),
+    activePlayer: "X"
+  });
+  const [msg, setMsg] = useState("";
 
-  useEffect(() => {
-    let timer;
+  const HandleClick = (key) => {
+    // If square is taken or game is over, ignore click
+    if (state.selections[key] || msg) return;
 
-    if (isActive && timeLeft > 0) {
-      timer = setInterval(() => {
-        setTimeLeft((prev) => prev - 1);
-      }, 1000);
-    }
+    setState(s => {
+      const cp = [...s.sections];
+      cp[key] = s.activePlayer;
 
-    if (timeLeft === 0 && isActive) {
-      setIsActive(false);
-    }
+      const isWinner = winning_combinations.some(combo =>
+        combo.every(index => cp[index] == s.activePlayeer)
+      );
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, [timeLeft, isActive]);
+      const isDraw = !isWinner && cp.every(x => x !== null);
 
-  const generateOTP = () => {
-    const newOtp = Math.floor(100000 + Math.random() * 900000);
-    setOtp(newOtp);
-    setTimeLeft(5);
-    setIsActive(true);
+      if (isWinner) {
+        setMsg(`Winner: ${s.activePlayer}`);
+      } else if (isDraw) {
+        setMsg("Result: Draw");
+      }
+
+      return {
+        activePlayer: s.activePlayer === "X" ? "O" : "X",
+        selections: cp
+      };
+    });
+  };
+
+  const reset = () => {
+    setState({
+      selections: Array(9).fill(null),
+      activePlayer: "X"
+    });
+    setMsg("");
   };
 
   return (
-    <div className="container">
-      <h1 id="otp-title">OTP Generator</h1>
-
-      <h2 id="otp-display">
-        {otp ? otp : "Click 'Generate OTP' to get a code"}
-      </h2>
-
-      <p id="otp-timer" aria-live="polite">
-        {isActive && timeLeft > 0 && `Expires in: ${timeLeft} seconds`}
-        {!isActive && otp && timeLeft === 0 && "OTP expired. Click the button to generate a new OTP."}
-      </p>
-
-      <button
-        id="generate-otp-button"
-        onClick={generateOTP}
-        disabled={isActive}
-      >
-        Generate OTP
-      </button>
-    </div>
-  );
+    <>
+      <style>{`
+      .board-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: sans-serif;
+      }
+      .squares {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+      gap: 5px;
+      margin: 20px 0;
+      }
+      .sqaure {
+      width: 100px;
+      height: 100px;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer
+      }
+      `}</style>
+    </>
+  )
+  )
 }
