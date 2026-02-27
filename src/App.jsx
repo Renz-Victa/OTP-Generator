@@ -74,6 +74,9 @@ export default function OTPGenerator() {
       background: white;
       border: 1px solid white;
       }
+      .square:hover {
+      background: white;
+      }
       `}</style>
     </>
   )
