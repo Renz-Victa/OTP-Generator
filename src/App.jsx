@@ -102,9 +102,8 @@ export default function OTPGenerator() {
             </button>
           ))}
         </div>
-
+        <button id="reset" onClick={reset}>Reset Game</button>
       </div>
     </>
-  )
-  )
+  );
 }
