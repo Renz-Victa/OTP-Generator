@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import './index.css'
 
-const winning combinations = [
+const winning_combinations = [
   [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
   [0, 3, 6], [1, 4, 7], [2, 5, 8], // Cols
   [0, 4, 8], [2, 4, 6]             // Diagonals
@@ -12,7 +12,7 @@ export default function OTPGenerator() {
     selections: Array(9).fill(null),
     activePlayer: "X"
   });
-  const [msg, setMsg] = useState("";
+  const [msg, setMsg] = useState("");
 
   const HandleClick = (key) => {
     // If square is taken or game is over, ignore click
