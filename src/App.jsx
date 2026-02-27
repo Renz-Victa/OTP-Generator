@@ -77,6 +77,11 @@ export default function OTPGenerator() {
       .square:hover {
       background: white;
       }
+      .status {
+      height: 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      }
       `}</style>
     </>
   )
