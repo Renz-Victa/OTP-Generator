@@ -7,7 +7,7 @@ const winning_combinations = [
   [0, 4, 8], [2, 4, 6]             // Diagonals
 ];
 
-export default function OTPGenerator() {
+export default function Board() {
   const [state, setState] = useState({
     selections: Array(9).fill(null),
     activePlayer: "X"
@@ -19,11 +19,11 @@ export default function OTPGenerator() {
     if (state.selections[key] || msg) return;
 
     setState(s => {
-      const cp = [...s.sections];
+      const cp = [...s.selections];
       cp[key] = s.activePlayer;
 
       const isWinner = winning_combinations.some(combo =>
-        combo.every(index => cp[index] == s.activePlayeer)
+        combo.every(index => cp[index] == s.activePlayer)
       );
 
       const isDraw = !isWinner && cp.every(x => x !== null);
@@ -102,7 +102,12 @@ export default function OTPGenerator() {
             </button>
           ))}
         </div>
-        <button id="reset" onClick={reset}>Reset Game</button>
+        <button
+          id="reset"
+          onClick={reset}
+        >
+          Reset Game
+        </button>
       </div>
     </>
   );
