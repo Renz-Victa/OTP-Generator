@@ -82,6 +82,10 @@ export default function OTPGenerator() {
       font-size: 1.2rem;
       font-weight: bold;
       }
+      #reset {
+      padding: 10px 20px;
+      cursor: pointer;
+      }
       `}</style>
     </>
   )
