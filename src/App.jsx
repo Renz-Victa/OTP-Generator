@@ -94,8 +94,15 @@ export default function OTPGenerator() {
         <div className="sqaures">
           {state.selections.map((val, i) => (
             <button
+              key={i}
+              className="square"
+              onClick={() => HandleClick(i)}
+            >
+              {val}
+            </button>
           ))}
         </div>
+
       </div>
     </>
   )
