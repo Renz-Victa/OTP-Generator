@@ -1,26 +1,18 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import './index.css'
 
-export default function MyApp() {
+export default function ToggleApp() {
+    const [isVisible, setIsVisible] = useState(false);
+
+    const handleToggleVisibility = () => {
+        setIsVisible(!isVisible);
+    }
+
     return (
-        <div>
-            <h1>Counters that update separately</h1>
-            <MyButton />
-            <MyButton />
+        <div id="toggle-container">
+            <button onClick={handleToggleVisiblity} id="toggle-button">Message</button>
+
         </div>
     );
 }
 
-function MyButton() {
-    const [count, setCount] = useState(0);
-
-    function handleClick() {
-        setCount(count + 1);
-    }
-
-    return (
-        <button onClick={handleClick}>
-            Clicked {count} times
-        </button>
-    );
-}
