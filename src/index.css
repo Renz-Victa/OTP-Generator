@@ -24,3 +24,13 @@ body {
     cursor: pointer;
     transition: 0.3s ease;
 }
+
+#toggle-button:hover {
+    background: #0056b3;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    color: #333;
+}
