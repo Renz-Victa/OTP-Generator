@@ -3,7 +3,7 @@ import './index.css'
 
 export default function FruitsSearch() {
     const [query, setQuery] = useState('');
-    const [results, setResults] = useStae([]);
+    const [results, setResults] = useState([]);
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -17,7 +17,8 @@ export default function FruitsSearch() {
         const timeoutId = setTimeout(async () => {
             try {
                 const response = await fetch(``);
-                setResults(DataTransfer.map(fruit = > fruit.name));
+                const data = await response.json();
+                setResults(data.map(fruit => fruit.name));
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
@@ -39,10 +40,9 @@ export default function FruitsSearch() {
             <div id="results">
                 {results.length > 0 ? (
                     results.map(item => (
-                        results.map(item => (
-                            <p key={item} className="result-item>">{item}</p>
-                        ))
-                    ) : (
+                        <p key={item} className="result-item>">{item}</p>
+                    ))
+                ) : (
                     <p>No results found</p>
                 )}
             </div>
