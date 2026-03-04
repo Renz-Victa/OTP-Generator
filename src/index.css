@@ -20,3 +20,7 @@ body {
     border: 1px solid white;
     border-radius: 5px;
 }
+
+#results {
+    text-align: left;
+}
