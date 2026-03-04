@@ -19,8 +19,14 @@ body {
     width: 80%;
     border: 1px solid white;
     border-radius: 5px;
+    margin-top: 10px;
 }
 
 #results {
     text-align: left;
+}
+
+.result-item {
+    padding: 5px;
+    border-bottom: 1px solid white;
 }
