@@ -29,5 +29,13 @@ export default function SuperheroForm() {
         const { value, checked } = e.target;
         setPowers(checked ? [...powers, value] : powers.filter(p => p !== value));
     }
+
+    return (
+        <div className='form-wrap'>
+            <h2>Superhero Application Form</h2>
+            <p>Please complete all fields</p>
+            <form method='post' action=''></form>
+        </div>
+    )
 }
 
