@@ -45,6 +45,19 @@ export default function SuperheroForm() {
                     />
                 </label>
             </div>
+            <label className='section column'>
+                How did you get your power?
+                <select value={powerSource} onChange={e => setPowerSource(e.target.value)}>
+                    <option value=''>
+                        Select one
+                    </option>
+                    {powerSourceOptions.map(source => (
+                        <option key={source} value={source}>
+                            {source}
+                        </option>
+                    ))}
+                </select>
+            </label>
         </div>
     )
 }
