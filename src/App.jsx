@@ -23,6 +23,11 @@ export default function SuperheroForm() {
     const [heroName, setHeroName] = useState('');
     const [realName, setRealName] = useState('');
     const [powerSource, setPowerSource] = useState('');
-    const [powers, setPowers] = useState('');
+    const [powers, setPowers] = useState([]);
+
+    const handlePowersChange = e => {
+        const { value, checked } = e.target;
+        setPowers(checked ? [...powers, value] : powers.filter(p => p !== value));
+    }
 }
 
