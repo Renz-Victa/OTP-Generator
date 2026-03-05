@@ -69,9 +69,18 @@ export default function SuperheroForm() {
                             checked={powers.includes(power)}
                             onChange={handlePowersChange}
                         />
-                ))}
+                        <span>{power}</span>
                     </label>
-        </div>
+                ))}
+            </label>
+            <button
+                className='submit-btn'
+                type='submit'
+            >
+                Join the League
+            </button>
+        </form>
+        </div >
     )
-}
+};
 
