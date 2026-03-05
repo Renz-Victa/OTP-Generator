@@ -58,6 +58,19 @@ export default function SuperheroForm() {
                     ))}
                 </select>
             </label>
+            <label className='section column'>
+                List your powers (select all that apply);
+
+                {powersOptions.map(power => (
+                    <label key={power}>
+                        <input
+                            type='checkbox'
+                            value={power}
+                            checked={powers.includes(power)}
+                            onChange={handlePowersChange}
+                        />
+                ))}
+                    </label>
         </div>
     )
 }
