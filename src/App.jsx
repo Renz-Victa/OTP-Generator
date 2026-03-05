@@ -35,6 +35,16 @@ export default function SuperheroForm() {
             <h2>Superhero Application Form</h2>
             <p>Please complete all fields</p>
             <form method='post' action=''></form>
+            <div className='section'>
+                <label>
+                    Hero Name
+                    <input
+                        type='text'
+                        value={heroName}
+                        onChange={e => setHeroName(e.target.value)}
+                    />
+                </label>
+            </div>
         </div>
     )
 }
