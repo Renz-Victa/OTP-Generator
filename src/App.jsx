@@ -34,52 +34,60 @@ export default function SuperheroForm() {
         <div className='form-wrap'>
             <h2>Superhero Application Form</h2>
             <p>Please complete all fields</p>
-            <form method='post' action=''></form>
-            <div className='section'>
-                <label>
-                    Hero Name
-                    <input
-                        type='text'
-                        value={heroName}
-                        onChange={e => setHeroName(e.target.value)}
-                    />
-                </label>
-            </div>
-            <label className='section column'>
-                How did you get your power?
-                <select value={powerSource} onChange={e => setPowerSource(e.target.value)}>
-                    <option value=''>
-                        Select one
-                    </option>
-                    {powerSourceOptions.map(source => (
-                        <option key={source} value={source}>
-                            {source}
-                        </option>
-                    ))}
-                </select>
-            </label>
-            <label className='section column'>
-                List your powers (select all that apply);
-
-                {powersOptions.map(power => (
-                    <label key={power}>
+            <form method='post' action=''>
+                <div className='section'>
+                    <label>
+                        Hero Name
                         <input
-                            type='checkbox'
-                            value={power}
-                            checked={powers.includes(power)}
-                            onChange={handlePowersChange}
+                            type='text'
+                            value={heroName}
+                            onChange={e => setHeroName(e.target.value)}
                         />
-                        <span>{power}</span>
                     </label>
-                ))}
-            </label>
-            <button
-                className='submit-btn'
-                type='submit'
-            >
-                Join the League
-            </button>
-        </form>
+                    <label>
+                        Real Name
+                        <input
+                            type='password'
+                            value={realName}
+                            onChange={e => setRealName(e.target.value)}
+                        />
+                    </label>
+                </div>
+                <label className='section column'>
+                    How did you get your power?
+                    <select value={powerSource} onChange={e => setPowerSource(e.target.value)}>
+                        <option value=''>
+                            Select one
+                        </option>
+                        {powerSourceOptions.map(source => (
+                            <option key={source} value={source}>
+                                {source}
+                            </option>
+                        ))}
+                    </select>
+                </label>
+                <label className='section column'>
+                    List your powers (select all that apply);
+
+                    {powersOptions.map(power => (
+                        <label key={power}>
+                            <input
+                                type='checkbox'
+                                value={power}
+                                checked={powers.includes(power)}
+                                onChange={handlePowersChange}
+                            />
+                            <span>{power}</span>
+                        </label>
+                    ))}
+                </label>
+                <button
+                    className='submit-btn'
+                    type='submit'
+                >
+                    Join the League
+                </button>
+            </form>
         </div >
     )
 };
