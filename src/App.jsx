@@ -1,52 +1,28 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import './index.css'
 
-export default function FruitsSearch() {
-    const [query, setQuery] = useState('');
-    const [results, setResults] = useState([]);
+export default function SuperheroForm() {
+    const powerSourceOptions = [
+        'Bitten by a strange creature',
+        'Radioactive exposure',
+        'Science experiment',
+        'Alien heritage',
+        'Ancient artifact discovery',
+        'Other'
+    ];
 
-    function handleSubmit(e) {
-        e.preventDefault();
-    }
+    const powersOptions = [
+        'Super Strength',
+        'Super Speed',
+        'Flight',
+        'Invisiblity',
+        'Telekinesis',
+        'Other'
+    ];
 
-    useEffect(() => {
-        if (query.trim() === '') {
-            setResults([]);
-            return;
-        }
-        const timeoutId = setTimeout(async () => {
-            try {
-                const response = await fetch(``);
-                const data = await response.json();
-                setResults(data.map(fruit => fruit.name));
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        }, 700);
-
-    }, [query]);
-
-    return (
-        <div id="search-container">
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="search-input">Search for fruits:</label>
-                <input
-                    id="search-input"
-                    type="search"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                />
-            </form>
-            <div id="results">
-                {results.length > 0 ? (
-                    results.map(item => (
-                        <p key={item} className="result-item>">{item}</p>
-                    ))
-                ) : (
-                    <p>No results found</p>
-                )}
-            </div>
-        </div>
-    );
+    const [heroName, setHeroName] = useState('');
+    const [realName, setRealName] = useState('');
+    const [powerSource, setPowerSource] = useState('');
+    const [powers, setPowers] = useState('');
 }
 
