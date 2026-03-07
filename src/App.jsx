@@ -1,7 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import './index.css'
 
-
 const items = [
   "Apples",
   "Bananas",
@@ -30,7 +29,7 @@ export default function ShoppingList() {
 
   const toggleItem = (item) => {
     setSelectedItems((prev) =>
-      prev.includes(item) ? prev.filter((i) => !== iitem) : [...prev, item]
+      prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item]
     );
   };
 
@@ -54,7 +53,7 @@ export default function ShoppingList() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <p id="search-description">Type to filter the lsit below:</p>
+        <p id="search-description">Type to filter the list below:</p>
         <ul>
           {filteredItems.map((item) => {
             const isChecked = selectedItems.includes(item);
