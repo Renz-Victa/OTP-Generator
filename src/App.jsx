@@ -55,6 +55,19 @@ export default function ShoppingList() {
           onChange={(e) => setQuery(e.target.value)}
         />
         <p id="search-description">Type to filter the lsit below:</p>
+        <ul>
+          {filteredItems.map((item) => {
+            const isChecked = selectedItems.includes(item);
+            return (
+              <li
+                key={item}
+                style={{ textDecoration: isChecked ? "line-through" : "none" }}
+              >
+
+              </li>
+            )
+          })}
+        </ul>
       </form>
     </div>
   )
