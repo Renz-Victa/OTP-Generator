@@ -63,13 +63,20 @@ export default function ShoppingList() {
                 key={item}
                 style={{ textDecoration: isChecked ? "line-through" : "none" }}
               >
-
+                <label>
+                  <input
+                    type="checkbox"
+                    onChange={() => toggleItem(item)}
+                    checked={isChecked}
+                  />
+                  {item}
+                </label>
               </li>
-            )
+            );
           })}
         </ul>
       </form>
     </div>
-  )
-}
+  );
+};
 
