@@ -49,6 +49,12 @@ export default function ShoppingList() {
         <input
           id="search"
           type="search"
+          placeholder="Search..."
+          aria-describedby="search-description"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <p id="search-description">Type to filter the lsit below:</p>
       </form>
     </div>
   )
