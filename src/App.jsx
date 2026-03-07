@@ -34,6 +34,11 @@ export default function ShoppingList() {
     );
   };
 
-
+  if (prevToggleItem !== toggleItem) {
+    console.log("New toggleItem function");
+    prevToggleItem = toggleItem;
+  } else {
+    console.log("Current toggleItem function");
+  }
 }
 
