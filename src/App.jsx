@@ -40,5 +40,17 @@ export default function ShoppingList() {
   } else {
     console.log("Current toggleItem function");
   }
+
+  return (
+    <div className="container">
+      <h1>Shopping List</h1>
+      <form>
+        <label htmlFor="search">Search for an item:</label>
+        <input
+          id="search"
+          type="search"
+      </form>
+    </div>
+  )
 }
 
