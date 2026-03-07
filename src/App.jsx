@@ -27,5 +27,13 @@ export default function ShoppingList() {
       item.toLowerCase().includes(query.toLowerCase())
     );
   }, [query]);
+
+  const toggleItem = (item) => {
+    setSelectedItems((prev) =>
+      prev.includes(item) ? prev.filter((i) => !== iitem) : [...prev, item]
+    );
+  };
+
+
 }
 
